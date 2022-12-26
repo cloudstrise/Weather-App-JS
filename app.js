@@ -36,7 +36,7 @@ window.addEventListener('load', ()=> {
                   locationTimezone.textContent = name;
 
                   //Celcius Formula
-                  let celsius = (temp - 32) * (5 / 9);
+                  let farenheit = (temp * 1.8) + 32;
 
                   //Set Icon
                   locationIcon.innerHTML = `<img src="icons/${icon}.png">`;
@@ -45,11 +45,11 @@ window.addEventListener('load', ()=> {
 
                   //Change temperature to / from Celsius/Farenheit
                   temperatureSection.addEventListener("click", () => {
-                    if (temperatureSpan.textContent == "F") {
-                      temperatureSpan.textContent = "C";
-                      temperatureDegree.textContent = Math.floor(celsius);
-                    } else {
+                    if (temperatureSpan.textContent == "C") {
                       temperatureSpan.textContent = "F";
+                      temperatureDegree.textContent = Math.floor(farenheit);
+                    } else {
+                      temperatureSpan.textContent = "C";
                       temperatureDegree.textContent = temp;
                     }
                   });
